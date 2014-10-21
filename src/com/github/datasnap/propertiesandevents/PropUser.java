@@ -8,6 +8,9 @@ public class PropUser {
     private Propid Propid;
     private PropAudience propAudience;
     private PropUserProperties propUserProperties; 
+	private String opt_in_location;     // put in boolean handling code
+    private String optInPushNotifications;     // put in boolean handling code
+    private String optInVendor;     // put in boolean handling code
 	
 	public PropTags getTags() {
 		return propTags;
@@ -41,6 +44,31 @@ public class PropUser {
 		this.propUserProperties = propUserProperties;
 	}
     
+    public String getOpt_in_location() {
+		return opt_in_location;
+	}
+
+	public void setOpt_in_location(String opt_in_location) {
+		this.opt_in_location = opt_in_location;
+	}
+
+	public String getOptInPushNotifications() {
+		return optInPushNotifications;
+	}
+
+	public void setOptInPushNotifications(String optInPushNotifications) {
+		this.optInPushNotifications = optInPushNotifications;
+	}
+
+	public String getOptInVendor() {
+		return optInVendor;
+	}
+
+	public void setOptInVendor(String optInVendor) {
+		this.optInVendor = optInVendor;
+	}
+
+	
 	/**
 	 * Returns a JSON string corresponding to object state
 	 *

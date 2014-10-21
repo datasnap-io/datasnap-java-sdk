@@ -4,9 +4,11 @@ import com.github.datasnap.gson.JsonFormatter;
 
 public class PropCampaign extends Property{
 
-    private String campaignid;
+	private String campaignId;
     private String name;
     private PropTags propTags;
+    private String communicationIds;
+    
  /** private PropSubCampaign subCampaign;
     ],
     "targeting_rules": {
@@ -144,5 +146,39 @@ public class PropCampaign extends Property{
 		return toJSON();
 	}
     
+    public String getCampaignid() {
+		return campaignId;
+	}
+
+	public void setCampaignid(String campaignid) {
+		this.campaignId = campaignid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public PropTags getPropTags() {
+		return propTags;
+	}
+
+	public void setPropTags(PropTags propTags) {
+		this.propTags = propTags;
+	}
+
+	public String getCommunicationIds() {
+		return communicationIds;
+	}
+
+	public void setCommunicationIds(String communicationIds) {
+		this.communicationIds = communicationIds;
+	}
+
+
+	
 
 }

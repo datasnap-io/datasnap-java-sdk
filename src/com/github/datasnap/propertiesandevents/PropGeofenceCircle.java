@@ -3,7 +3,23 @@ package com.github.datasnap.propertiesandevents;
 import com.github.datasnap.gson.JsonFormatter;
 
 public class PropGeofenceCircle {
-     private String radius;
+     public String getRadius() {
+		return radius;
+	}
+
+	public void setRadius(String radius) {
+		this.radius = radius;
+	}
+
+	public PropLocation getPropLocation() {
+		return propLocation;
+	}
+
+	public void setPropLocation(PropLocation propLocation) {
+		this.propLocation = propLocation;
+	}
+
+	private String radius;
      private PropLocation propLocation;
      
  	/**

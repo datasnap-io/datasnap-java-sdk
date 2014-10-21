@@ -3,10 +3,22 @@ package com.github.datasnap.propertiesandevents;
 import com.github.datasnap.gson.JsonFormatter;
 
 
-public class CommunicationEvent {
+public class CommunicationEvent extends Event {
 	
 	private String event_type;
-	 private String  organization_ids;
+	 public CommunicationEvent(String event_type, String organization_ids,
+			String project_ids, PropUser propUser,
+			PropCommunication propCommunication, PropCampaign propCampaign) {
+		super();
+		this.event_type = event_type;
+		this.organization_ids = organization_ids;
+		this.project_ids = project_ids;
+		this.propUser = propUser;
+		this.propCommunication = propCommunication;
+		this.propCampaign = propCampaign;
+	}
+
+	private String  organization_ids;
 	 private String  project_ids;
 	private PropUser propUser;
 	private PropCommunication propCommunication;
