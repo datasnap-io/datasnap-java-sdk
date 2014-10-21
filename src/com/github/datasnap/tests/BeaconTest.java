@@ -1,10 +1,10 @@
-package com.enduserclient;
+package com.github.datasnap.tests;
 import com.github.datasnap.controller.*;
 import com.github.datasnap.propertiesandevents.*;
 
 import datasnap.pojos.Beacon;
 
-public class EndUserClientTest {
+public class BeaconTest {
 
 	public static void main(String[] args) {
 		DataSnap dataSnap = new DataSnap();
@@ -36,7 +36,7 @@ public class EndUserClientTest {
 		propDevice.setCountry_code("1");   
 		propDevice.setNetwork_code("327");   
 								
-		Event event = new Event(eventType,propPlace,propUser,beaconProp,propDeviceInfo);	
+		Event event = new BeaconEvent(eventType,propPlace,propUser,beaconProp,propDeviceInfo);	
 		dataSnap.addEvent(event);
 	}
 
