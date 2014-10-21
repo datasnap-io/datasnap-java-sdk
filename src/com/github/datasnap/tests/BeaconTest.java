@@ -2,8 +2,6 @@ package com.github.datasnap.tests;
 import com.github.datasnap.controller.*;
 import com.github.datasnap.propertiesandevents.*;
 
-import datasnap.pojos.Beacon;
-
 public class BeaconTest {
 
 	public static void main(String[] args) {
