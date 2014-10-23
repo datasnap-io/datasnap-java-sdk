@@ -10,6 +10,6 @@ public class Defaults {
 	public static final int BACKOFF = 1000;
 	public static final int BATCH_INCREMENT = 20;
 	public static final String LOGGER = "datasnap";
-	public static final String ORGANISATION_ID = "organisationidnumber";
-	public static final String PROJECT_ID = "Project_id_number";
+	public static final String ORGANISATION_ID = "2345612§";
+	public static final String PROJECT_ID = "12345678";
 }

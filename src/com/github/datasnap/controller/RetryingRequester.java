@@ -3,7 +3,7 @@ package com.github.datasnap.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.datasnap.propertiesandevents.EventListBatchObject;
+import com.github.datasnap.eventthreading.EventListBatchObject;
 import com.github.datasnap.utils.Defaults;
 
 public class RetryingRequester extends Requester {

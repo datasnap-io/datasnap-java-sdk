@@ -1,6 +1,6 @@
 package com.github.datasnap.controller;
 
-import com.github.datasnap.propertiesandevents.Event;
+import com.github.datasnap.events.Event;
 import com.github.datasnap.stats.DsClientStats;
 
 

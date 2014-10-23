@@ -1,5 +1,6 @@
 package com.github.datasnap.gson;
 
+//  not thread-safe.....
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -48,10 +49,10 @@ public final class JsonFormatter {
 	}
 
 	/**
-	 * Converts a Raw PropType to JSON String
+	 * Converts a Raw Type to JSON String
 	 * 
 	 * @param <T>
-	 *            PropType to be converted
+	 *            Type to be converted
 	 * @param t
 	 *            Object of the type
 	 * @return JSON representation
@@ -64,7 +65,7 @@ public final class JsonFormatter {
 	 * Converts a JSON String to object representation
 	 * 
 	 * @param <T>
-	 *            PropType to be converted
+	 *            Type to be converted
 	 * @param responseString
 	 *            JSON representation
 	 * @param clazz

@@ -2,10 +2,10 @@ package com.github.datasnap.controller;
 
 import java.util.List;
 
-import com.github.datasnap.flush.DataSnapThread;
-import com.github.datasnap.flush.ICreateEventListBatch;
-import com.github.datasnap.propertiesandevents.Event;
-import com.github.datasnap.propertiesandevents.EventListBatchObject;
+import com.github.datasnap.events.Event;
+import com.github.datasnap.eventthreading.DataSnapThread;
+import com.github.datasnap.eventthreading.EventListBatchObject;
+import com.github.datasnap.eventthreading.ICreateEventListBatch;
 import com.github.datasnap.stats.DsClientStats;
 
 /**
