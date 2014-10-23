@@ -3,7 +3,7 @@ package com.github.datasnap.tests;
 import java.util.ArrayList;
 
 import com.github.datasnap.controller.*;
-import com.github.datasnap.events.Event;
+import com.github.datasnap.events.IEvent;
 import com.github.datasnap.events.UpdateEvent;
 import com.github.datasnap.propertiesandevents.*;
 import com.github.datasnap.utils.Defaults;
@@ -18,17 +18,17 @@ public class UpdateTest {
 		Beacon propBeacon = new Beacon();
 		
 		propBeacon.setIdentifier("SHDG-28AHD");
-		propBeacon.setBle_uuid("ble_uuid"); 
-		propBeacon.setBle_vendor_uuid("ble_vendor_uuid");
-		propBeacon.setBle_vendor_id("ble_vendor_id");
+		propBeacon.setBleUuid("ble_uuid"); 
+		propBeacon.setBleVendorUuid("ble_vendor_uuid");
+		propBeacon.setBleVendorId("ble_vendor_id");
 		propBeacon.setName("Front Entrance");
-		propBeacon.setIs_mobile("false");
-		propBeacon.setStart_time("2014-08-22 14:48:02 +0000");
-		propBeacon.setLast_update_time("2014-08-22 14:48:02 +0000");
+		propBeacon.setIsMobile("false");
+		propBeacon.setStartTime("2014-08-22 14:48:02 +0000");
+		propBeacon.setLastUpdateTime("2014-08-22 14:48:02 +0000");
 		propBeacon.setLatitude("11.22222");
 		propBeacon.setLongitude("123.444");
 		propBeacon.setVisibility("Private");
-		propBeacon.setBattery_level("50");
+		propBeacon.setBatteryLevel("50");
 		propBeacon.setTemperature("68.32");
 		propBeacon.setHardware("HardwaretypeoftheBeacon");
 		Categories categories = new Categories();
@@ -56,7 +56,7 @@ public class UpdateTest {
 
 		
 		
-		Event event = new UpdateEvent(eventType,Defaults.ORGANISATION_ID, Defaults.PROJECT_ID,propBeacon );
+		IEvent event = new UpdateEvent(eventType,Defaults.ORGANISATION_ID, Defaults.PROJECT_ID,propBeacon );
 		dataSnap.addEvent(event);
 	}
 

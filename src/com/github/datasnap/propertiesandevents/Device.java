@@ -3,16 +3,16 @@ package com.github.datasnap.propertiesandevents;
 public class Device extends Property{
 	
 	private String userAgent;
-    private String ip_address;
+    private String ipAddress;
     private String platform;
-    private String os_version;
+    private String osVersion;
     private String model;
     private String manufacturer;
     private String name;
-    private String vendor_id;
-    private String carrier_name;
-    private String country_code;
-    private String network_code;
+    private String vendorId;
+    private String carrierName;
+    private String countryCode;
+    private String networkCode;
 	
 	
     public String getUserAgent() {
@@ -21,11 +21,11 @@ public class Device extends Property{
 	public void setUserAgent(String userAgent) {
 		this.userAgent = userAgent;
 	}
-	public String getIp_address() {
-		return ip_address;
+	public String getIpAddress() {
+		return ipAddress;
 	}
-	public void setIp_address(String ip_address) {
-		this.ip_address = ip_address;
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 	public String getPlatform() {
 		return platform;
@@ -33,11 +33,11 @@ public class Device extends Property{
 	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
-	public String getOs_version() {
-		return os_version;
+	public String getOsVersion() {
+		return osVersion;
 	}
-	public void setOs_version(String os_version) {
-		this.os_version = os_version;
+	public void setOsVersion(String osVersion) {
+		this.osVersion = osVersion;
 	}
 	public String getModel() {
 		return model;
@@ -57,29 +57,29 @@ public class Device extends Property{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getVendor_id() {
-		return vendor_id;
+	public String getVendorId() {
+		return vendorId;
 	}
-	public void setVendor_id(String vendor_id) {
-		this.vendor_id = vendor_id;
+	public void setVendorId(String vendorId) {
+		this.vendorId = vendorId;
 	}
-	public String getCarrier_name() {
-		return carrier_name;
+	public String getCarrierName() {
+		return carrierName;
 	}
-	public void setCarrier_name(String carrier_name) {
-		this.carrier_name = carrier_name;
+	public void setCarrierName(String carrierName) {
+		this.carrierName = carrierName;
 	}
-	public String getCountry_code() {
-		return country_code;
+	public String getCountryCode() {
+		return countryCode;
 	}
-	public void setCountry_code(String country_code) {
-		this.country_code = country_code;
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
 	}
-	public String getNetwork_code() {
-		return network_code;
+	public String getNetworkCode() {
+		return networkCode;
 	}
-	public void setNetwork_code(String network_code) {
-		this.network_code = network_code;
+	public void setNetworkCode(String networkCode) {
+		this.networkCode = networkCode;
 	}
 
     

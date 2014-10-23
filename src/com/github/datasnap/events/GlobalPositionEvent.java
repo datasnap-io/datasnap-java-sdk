@@ -1,53 +1,58 @@
 package com.github.datasnap.events;
 
-import com.github.datasnap.gson.JsonFormatter;
+import java.util.Map;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import com.github.datasnap.propertiesandevents.DeviceInfo;
 import com.github.datasnap.propertiesandevents.GlobalPosition;
 import com.github.datasnap.propertiesandevents.User;
 
-public class GlobalPositionEvent extends Event {
+public class GlobalPositionEvent implements IEvent{
 
-	private String event_type;
-	private String organization_ids;
-	private String project_ids;
+	private String eventType;
+	private String organizationIds;
+	private String projectIds;
 	private User user;
 	private GlobalPosition GlobalPosition;
 	private DeviceInfo DeviceInfo;
+	@JsonIgnore
+	private Map<String, Object> additionalProperties;
 
-	public GlobalPositionEvent(String event_type, String organization_ids,
-			String project_ids, User user, GlobalPosition globalPosition,
+	public GlobalPositionEvent(String eventType, String organizationIds,
+			String projectIds, User user, GlobalPosition globalPosition,
 			DeviceInfo deviceInfo) {
 		super();
-		this.event_type = event_type;
-		this.organization_ids = organization_ids;
-		this.project_ids = project_ids;
+		this.eventType = eventType;
+		this.organizationIds = organizationIds;
+		this.projectIds = projectIds;
 		this.user = user;
 		GlobalPosition = globalPosition;
 		DeviceInfo = deviceInfo;
 	}
 
-	public String getEvent_type() {
-		return event_type;
+	public String getEventType() {
+		return eventType;
 	}
 
-	public void setEvent_type(String event_type) {
-		this.event_type = event_type;
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
 	}
 
-	public String getOrganization_ids() {
-		return organization_ids;
+	public String getOrganizationIds() {
+		return organizationIds;
 	}
 
-	public void setOrganization_ids(String organization_ids) {
-		this.organization_ids = organization_ids;
+	public void setOrganizationIds(String organizationIds) {
+		this.organizationIds = organizationIds;
 	}
 
-	public String getProject_ids() {
-		return project_ids;
+	public String getProjectIds() {
+		return projectIds;
 	}
 
-	public void setProject_ids(String project_ids) {
-		this.project_ids = project_ids;
+	public void setProjectIds(String projectIds) {
+		this.projectIds = projectIds;
 	}
 
 	public GlobalPosition getGlobalPosition() {
@@ -72,6 +77,14 @@ public class GlobalPositionEvent extends Event {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
+
+	public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+		this.additionalProperties = additionalProperties ;
 	}
 
 }

@@ -1,25 +1,20 @@
 package com.github.datasnap.propertiesandevents;
 
-import com.github.datasnap.gson.JsonFormatter;
-
 /**
  * @author brianferan
  *
  */
-public class Audience extends Property{
+public class Audience extends Property {
 
-	
-	private String 	Education;
-private String College;
-private String  Age;
-private String  Ethnicity;
-private String Kids;
-private String Gender;
-private String Interests;
-private String  Income;
-	
-	
-	
+	private String Education;
+	private String College;
+	private String Age;
+	private String Ethnicity;
+	private String Kids;
+	private String Gender;
+	private String Interests;
+	private String Income;
+
 	public String getEducation() {
 		return Education;
 	}
@@ -83,23 +78,5 @@ private String  Income;
 	public void setIncome(String income) {
 		Income = income;
 	}
-
-
-	
-	
-
-/**
- * Returns a JSON string corresponding to object state
- *
- * @return JSON representation
- */
-public String toJSON() {
-	return JsonFormatter.toJSON(this);
-}
-
-@Override
-public String toString() {
-	return toJSON();
-}
 
 }

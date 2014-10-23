@@ -1,7 +1,5 @@
 package com.github.datasnap.propertiesandevents;
 
-import com.github.datasnap.gson.JsonFormatter;
-
 public class GlobalPosition {
 
 	private String location;
@@ -9,8 +7,8 @@ public class GlobalPosition {
 	private String accuracy;
 	private String course;
 	private String speed;
-  
-    public String getLocation() {
+
+	public String getLocation() {
 		return location;
 	}
 
@@ -50,22 +48,4 @@ public class GlobalPosition {
 		this.speed = speed;
 	}
 
-
-    
-	/**
-	 * Returns a JSON string corresponding to object state
-	 *
-	 * @return JSON representation
-	 */
-	public String toJSON() {
-		return JsonFormatter.toJSON(this);
-	}
-
-	@Override
-	public String toString() {
-		return toJSON();
-	}
-    
 }
-	
-

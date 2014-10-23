@@ -1,48 +1,52 @@
 package com.github.datasnap.events;
 
-import com.github.datasnap.gson.JsonFormatter;
+import java.util.Map;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import com.github.datasnap.propertiesandevents.User;
 
-public class InteractionEvent extends Event {
+public class InteractionEvent implements IEvent{
 
-	public InteractionEvent(String event_type, String organization_ids,
-			String project_ids, User user) {
+	private String eventType;
+	private String organizationIds;
+	private String projectIds;
+	private User user;
+	@JsonIgnore
+	private Map<String, Object> additionalProperties;
+
+	// opt-in stuff needed	
+	public InteractionEvent(String eventType, String organizationIds,
+			String projectIds, User user) {
 		super();
-		this.event_type = event_type;
-		this.organization_ids = organization_ids;
-		this.project_ids = project_ids;
+		this.eventType = eventType;
+		this.organizationIds = organizationIds;
+		this.projectIds = projectIds;
 		this.user = user;
 	}
 
-	private String event_type;
-	private String organization_ids;
-	private String project_ids;
-	private User user;
-
-	// opt-in stuff needed
-
-	public String getEvent_type() {
-		return event_type;
+	public String getEventType() {
+		return eventType;
 	}
 
-	public void setEvent_type(String event_type) {
-		this.event_type = event_type;
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
 	}
 
-	public String getOrganization_ids() {
-		return organization_ids;
+	public String getOrganizationIds() {
+		return organizationIds;
 	}
 
-	public void setOrganization_ids(String organization_ids) {
-		this.organization_ids = organization_ids;
+	public void setOrganizationIds(String organizationIds) {
+		this.organizationIds = organizationIds;
 	}
 
-	public String getProject_ids() {
-		return project_ids;
+	public String getProjectIds() {
+		return projectIds;
 	}
 
-	public void setProject_ids(String project_ids) {
-		this.project_ids = project_ids;
+	public void setProjectIds(String projectIds) {
+		this.projectIds = projectIds;
 	}
 
 	public User getUser() {
@@ -51,6 +55,14 @@ public class InteractionEvent extends Event {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
+
+	public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+		this.additionalProperties = additionalProperties ;
 	}
 
 }

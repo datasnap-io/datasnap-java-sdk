@@ -1,7 +1,5 @@
 package com.github.datasnap.propertiesandevents;
 
-import com.github.datasnap.gson.JsonFormatter;
-
 public class Campaign extends Property{
 
 	private String campaignId;
@@ -132,26 +130,13 @@ public class Campaign extends Property{
     }
 } */
 	
-	/**
-	 * Returns a JSON string corresponding to object state
-	 *
-	 * @return JSON representation
-	 */
-	public String toJSON() {
-		return JsonFormatter.toJSON(this);
-	}
-
-	@Override
-	public String toString() {
-		return toJSON();
-	}
     
-    public String getCampaignid() {
+    public String getCampaignId() {
 		return campaignId;
 	}
 
-	public void setCampaignid(String campaignid) {
-		this.campaignId = campaignid;
+	public void setCampaignId(String campaignId) {
+		this.campaignId = campaignId;
 	}
 
 	public String getName() {

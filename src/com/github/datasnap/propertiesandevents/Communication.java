@@ -1,14 +1,12 @@
 package com.github.datasnap.propertiesandevents;
 
-import com.github.datasnap.gson.JsonFormatter;
-
 public class Communication extends Property{
 	
 	private String description;
     private Tags tags;
     private String id;
     private String status;
-    private String communication_vendor_id;
+    private String communicationVendorId;
     private String name;
     private Type types;
     private Content content;
@@ -38,11 +36,11 @@ public class Communication extends Property{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getCommunication_vendor_id() {
-		return communication_vendor_id;
+	public String gSetCommunicationVendorId() {
+		return communicationVendorId;
 	}
-	public void setCommunication_vendor_id(String communication_vendor_id) {
-		this.communication_vendor_id = communication_vendor_id;
+	public void setCommunicationVendorId(String communicationVendorId) {
+		this.communicationVendorId = communicationVendorId;
 	}
 	public String getName() {
 		return name;

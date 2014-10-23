@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-  <classpathentry kind="src" path="src" including="**/*.java"/>
-  <classpathentry kind="output" path="target/classes"/>
-  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-lang3/3.3/commons-lang3-3.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.4.3/jackson-annotations-2.4.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.jar"/>
-  <classpathentry kind="var" path="M2_REPO/joda-time/joda-time/2.1/joda-time-2.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.3.5/httpclient-4.3.5.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.6/commons-codec-1.6.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" sourcepath="M2_REPO/com/google/code/gson/gson/2.2.4/gson-2.2.4-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/junit/junit/4.8.1/junit-4.8.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/simpleframework/simple/5.1.6/simple-5.1.6.jar"/>
+	<classpathentry including="**/*.java" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-lang3/3.3/commons-lang3-3.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.4.2/jackson-core-2.4.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/json/json/20131018/json-20131018.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.4.3/jackson-annotations-2.4.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.jar"/>
+	<classpathentry kind="var" path="M2_REPO/joda-time/joda-time/2.1/joda-time-2.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.3.5/httpclient-4.3.5.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.6/commons-codec-1.6.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" sourcepath="M2_REPO/com/google/code/gson/gson/2.2.4/gson-2.2.4-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/4.8.1/junit-4.8.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/simpleframework/simple/5.1.6/simple-5.1.6.jar"/>
+	<classpathentry kind="lib" path="/Users/brianferan/Downloads/java-json.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

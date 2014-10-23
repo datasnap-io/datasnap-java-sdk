@@ -2,30 +2,14 @@ package com.github.datasnap.propertiesandevents;
 
 import java.util.ArrayList;
 
-import com.github.datasnap.gson.JsonFormatter;
-
 public class Place {
 	private String placeId;
 	private String name;
-    private Tags tags;
+	private Tags tags;
 	private Address address;
-    private String last_place;
+	private String lastPlace;
 	private ArrayList<String> geofences;
 	private ArrayList<String> beacons;
-	
-	/**
-	 * Returns a JSON string corresponding to object state
-	 *
-	 * @return JSON representation
-	 */
-	public String toJSON() {
-		return JsonFormatter.toJSON(this);
-	}
-
-	@Override
-	public String toString() {
-		return toJSON();
-	}
 
 	public String getPlaceId() {
 		return placeId;
@@ -59,12 +43,12 @@ public class Place {
 		this.address = address;
 	}
 
-	public String getLast_place() {
-		return last_place;
+	public String getLastPlace() {
+		return lastPlace;
 	}
 
-	public void setLast_place(String last_place) {
-		this.last_place = last_place;
+	public void setLastPlace(String lastPlace) {
+		this.lastPlace = lastPlace;
 	}
 
 	public ArrayList<String> getGeofences() {

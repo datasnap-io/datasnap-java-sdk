@@ -2,17 +2,17 @@ package com.github.datasnap.controller;
 
 import java.util.List;
 
-import com.github.datasnap.events.Event;
+import com.github.datasnap.events.IEvent;
 import com.github.datasnap.eventthreading.DataSnapThread;
 import com.github.datasnap.eventthreading.EventListBatchObject;
 import com.github.datasnap.eventthreading.ICreateEventListBatch;
 import com.github.datasnap.stats.DsClientStats;
 
 /**
- * The DataSnap.io Client - Instantiate this to use the DataSnap.io API.
- * Creates a new Datasnap.io client- a HTTP wrapper over the Datasnap.io REST API.
- * It is designed to be be thread-safe, using batching to efficiently send
- * requests on a separate resource-constrained thread pool.
+ * The DataSnap.io Client - Instantiate this to use the DataSnap.io API. Creates
+ * a new Datasnap.io client- a HTTP wrapper over the Datasnap.io REST API. It is
+ * designed to be be thread-safe, using batching to efficiently send requests on
+ * a separate resource-constrained thread pool.
  * 
  */
 public class DataSnapClient {
@@ -25,18 +25,18 @@ public class DataSnapClient {
 	public DataSnapClient(DataSendingConfig config) {
 		this.config = config;
 		this.statistics = new DsClientStats();
-	    this.requester = new RetryingRequester(this);		
+		this.requester = new RetryingRequester(this);
 		this.dataSnapThread = new DataSnapThread(this, factory, requester);
 		this.dataSnapThread.start();
 	}
-	
-	private ICreateEventListBatch factory = new ICreateEventListBatch() {		
-		public EventListBatchObject create(List<Event> batch) {
+
+	private ICreateEventListBatch factory = new ICreateEventListBatch() {
+		public EventListBatchObject create(List<IEvent> batch) {
 			return new EventListBatchObject(batch);
 		}
 	};
 
-	public void addEvent(Event event) {
+	public void addEvent(IEvent event) {
 		dataSnapThread.enqueue(event);
 		statistics.updateEvents(1);
 	}

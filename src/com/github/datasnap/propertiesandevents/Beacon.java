@@ -3,25 +3,24 @@ package com.github.datasnap.propertiesandevents;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
 
-import com.github.datasnap.gson.JsonFormatter;
 @JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class Beacon extends Property{
 
 	private String identifier;
-	private String ble_uuid;
-    private String ble_vendor_uuid;
-    private String ble_vendor_id;
+	private String bleUuid;
+    private String bleVendorUuid;
+    private String bleVendorId;
     private String rssi;
-    private String is_mobile;
-    private String previous_rssi;
+    private String isMobile;
+    private String previousRssi;
     private String name;
-    private String dwell_time;
-    private String start_time;
-    private String last_update_time;
+    private String dwellTime;
+    private String startTime;
+    private String lastUpdateTime;
     private String latitude;
     private String longitude;
     private String visibility;
-    private String battery_level;
+    private String batteryLevel;
     private String temperature;
     private String hardware;
     private Categories categories;
@@ -36,28 +35,28 @@ public class Beacon extends Property{
 		this.identifier = identifier;
 	}
 
-	public String getBle_uuid() {
-		return ble_uuid;
+	public String getBleUuid() {
+		return bleUuid;
 	}
 
-	public void setBle_uuid(String ble_uuid) {
-		this.ble_uuid = ble_uuid;
+	public void setBleUuid(String bleUuid) {
+		this.bleUuid = bleUuid;
 	}
 
-	public String getBle_vendor_uuid() {
-		return ble_vendor_uuid;
+	public String getBleVendorUuid() {
+		return bleVendorUuid;
 	}
 
-	public void setBle_vendor_uuid(String ble_vendor_uuid) {
-		this.ble_vendor_uuid = ble_vendor_uuid;
+	public void setBleVendorUuid(String bleVendorUuid) {
+		this.bleVendorUuid = bleVendorUuid;
 	}
 
-	public String getBle_vendor_id() {
-		return ble_vendor_id;
+	public String getbleVendorId() {
+		return bleVendorId;
 	}
 
-	public void setBle_vendor_id(String ble_vendor_id) {
-		this.ble_vendor_id = ble_vendor_id;
+	public void setBleVendorId(String bleVendorId) {
+		this.bleVendorId = bleVendorId;
 	}
 
 	public String getRssi() {
@@ -68,20 +67,20 @@ public class Beacon extends Property{
 		this.rssi = rssi;
 	}
 
-	public String getIs_mobile() {
-		return is_mobile;
+	public String getIsMobile() {
+		return isMobile;
 	}
 
-	public void setIs_mobile(String is_mobile) {
-		this.is_mobile = is_mobile;
+	public void setIsMobile(String isMobile) {
+		this.isMobile = isMobile;
 	}
 
-	public String getPrevious_rssi() {
-		return previous_rssi;
+	public String getPreviousRssi() {
+		return previousRssi;
 	}
 
-	public void setPrevious_rssi(String previous_rssi) {
-		this.previous_rssi = previous_rssi;
+	public void setPreviousRssi(String previousRssi) {
+		this.previousRssi = previousRssi;
 	}
 
 	public String getName() {
@@ -92,28 +91,28 @@ public class Beacon extends Property{
 		this.name = name;
 	}
 
-	public String getDwell_time() {
-		return dwell_time;
+	public String getDwellTime() {
+		return dwellTime;
 	}
 
-	public void setDwell_time(String dwell_time) {
-		this.dwell_time = dwell_time;
+	public void setDwellTime(String dwellTime) {
+		this.dwellTime = dwellTime;
 	}
 
-	public String getStart_time() {
-		return start_time;
+	public String getStartTime() {
+		return startTime;
 	}
 
-	public void setStart_time(String start_time) {
-		this.start_time = start_time;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
-	public String getLast_update_time() {
-		return last_update_time;
+	public String getLastUpdateTime() {
+		return lastUpdateTime;
 	}
 
-	public void setLast_update_time(String last_update_time) {
-		this.last_update_time = last_update_time;
+	public void setLastUpdateTime(String lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
 	}
 
 	public String getLatitude() {
@@ -140,12 +139,12 @@ public class Beacon extends Property{
 		this.visibility = visibility;
 	}
 
-	public String getBattery_level() {
-		return battery_level;
+	public String getBatteryLevel() {
+		return batteryLevel;
 	}
 
-	public void setBattery_level(String battery_level) {
-		this.battery_level = battery_level;
+	public void setBatteryLevel(String batteryLevel) {
+		this.batteryLevel = batteryLevel;
 	}
 
 	public String getTemperature() {
@@ -179,26 +178,6 @@ public class Beacon extends Property{
 	public void setPropTags(Tags tags) {
 		this.tags = tags;
 	}
-
-
-
-
-/**
- * Returns a JSON string corresponding to object state
- *
- * @return JSON representation
- */
-public String toJSON() {
-	return JsonFormatter.toJSON(this);
-}
-
-@Override
-public String toString() {
-	return toJSON();
-}
-
-
-
 
 
 }

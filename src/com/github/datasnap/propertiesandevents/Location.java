@@ -3,7 +3,7 @@ package com.github.datasnap.propertiesandevents;
 import java.math.BigDecimal;
 
 public class Location {
-	
+
 	public Location(BigDecimal[] coordinates) {
 		super();
 		this.coordinates = coordinates;
@@ -14,8 +14,5 @@ public class Location {
 	public BigDecimal[] getCoordinates() {
 		return coordinates;
 	}
-
-	
-
 
 }

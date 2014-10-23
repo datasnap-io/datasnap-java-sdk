@@ -2,7 +2,7 @@ package com.github.datasnap.eventthreading;
 
 import java.util.List;
 
-import com.github.datasnap.events.Event;
+import com.github.datasnap.events.IEvent;
 
 /**
  * A Factory that creates EventListBatchObject objects
@@ -15,6 +15,6 @@ public interface ICreateEventListBatch {
 	 * @param batch A list of items that represents the batch
 	 * @return {@link EventListBatchObject}
 	 */
-	public EventListBatchObject create(List<Event> batch);
+	public EventListBatchObject create(List<IEvent> batch);
 	
 }

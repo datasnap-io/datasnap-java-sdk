@@ -1,16 +1,13 @@
 package com.github.datasnap.propertiesandevents;
 
-import com.github.datasnap.gson.JsonFormatter;
-
-public class Content extends Property{
+public class Content extends Property {
 
 	private String text;
 	private String description;
 	private String image;
-    private String html;
-    private String url;
-    
-    
+	private String html;
+	private String url;
+
 	public String getText() {
 		return text;
 	}
@@ -50,23 +47,5 @@ public class Content extends Property{
 	public void setUrl(String url) {
 		this.url = url;
 	}
-    
-    
-	/**
-	 * Returns a JSON string corresponding to object state
-	 *
-	 * @return JSON representation
-	 */
-	public String toJSON() {
-		return JsonFormatter.toJSON(this);
-	}
 
-	@Override
-	public String toString() {
-		return toJSON();
-	}
-    
-    
-    }
-	
-
+}

@@ -2,8 +2,6 @@ package com.github.datasnap.propertiesandevents;
 
 import java.util.ArrayList;
 
-import com.github.datasnap.gson.JsonFormatter;
-
 public class Categories extends Property{
 	
 	private ArrayList<String> sports = new ArrayList<String>();

@@ -10,12 +10,12 @@ import org.slf4j.LoggerFactory;
 
 import com.github.datasnap.controller.DataSnapClient;
 import com.github.datasnap.controller.RetryingRequester;
-import com.github.datasnap.events.Event;
+import com.github.datasnap.events.IEvent;
 import com.github.datasnap.utils.Defaults;
 
 public class DataSnapThread extends Thread {
 	
-	private LinkedBlockingQueue<Event> queue;
+	private LinkedBlockingQueue<IEvent> queue;
 	
 	// volatile protects the flushing thread from caching the go variable in its
 	// own thread context (register)
@@ -36,17 +36,17 @@ public class DataSnapThread extends Thread {
 		this.client = client;
 		this.factory = factory;
 		this.requester = requester2;
-		this.queue = new LinkedBlockingQueue<Event>();
+		this.queue = new LinkedBlockingQueue<IEvent>();
 		this.go = true;
 		this.idle = new ManualResetEvent(true);
 	}
 	
 	public void run() {
 		while (go) {
-			List<Event> current = new LinkedList<Event>();		
+			List<IEvent> current = new LinkedList<IEvent>();		
 			do {
 				if (queue.size() == 0) idle.set();			
-				Event payload = null;
+				IEvent payload = null;
 				try {
 					// wait half a second for an item to appear,otherwise yield to confirm that we aren't restarting
 					payload = queue.poll(500, TimeUnit.MILLISECONDS);
@@ -67,7 +67,7 @@ public class DataSnapThread extends Thread {
 				EventListBatchObject eventListBatchObject = factory.create(current);
 				client.getStatistics().updateFlushAttempts(1);
 				requester.send(eventListBatchObject);
-				current = new LinkedList<Event>();
+				current = new LinkedList<IEvent>();
 			}			
 			try {
 				// thread context switch to avoid resource contention
@@ -77,7 +77,7 @@ public class DataSnapThread extends Thread {
 		}
 	}
 	
-	public void enqueue(Event payload) {
+	public void enqueue(IEvent payload) {
 		int maxQueueSize = client.getOptions().getMaxQueueSize();
 		int currentQueueSize = queue.size();
 		

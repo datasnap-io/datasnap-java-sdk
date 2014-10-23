@@ -14,25 +14,27 @@ public class DataSendingConfig {
 	private String host; // The REST API
 	private String organisationId; // Id assigned to the organisation
 	private String projectId; // Id assigned to the project
-    private int maxQueueSize; // After reaching this capacity stop sending messages
-    private int timeout; // milliseconds that pass before a request is marked as timed out
+	private int maxQueueSize; // After reaching this capacity stop sending
+								// messages
+	private int timeout; // milliseconds that pass before a request is marked as
+							// timed out
 	private int retries; // Amount of times to retry the request.
-    private int requestRetryWait;   // Time in milliseconds between retries.
-    private HttpHost proxy; // Optional proxy host connection.
-  
-    // Creates a config for data sending
-  	DataSendingConfig(String host, int maxQueueSize, int timeout, int retries,
-  			int requestRetryWait, String organisationId, String projectId) {
-  		setHost(host);
-  		setMaxQueueSize(maxQueueSize);
-  		setTimeout(timeout);
-  		setRetries(retries);
-  		setRequestRetryWait(requestRetryWait);
-  		setOrganisationId(organisationId);
-  		setProjectId(projectId);
-  	}
-        
-    // intialise with defaults
+	private int requestRetryWait; // Time in milliseconds between retries.
+	private HttpHost proxy; // Optional proxy host connection.
+
+	// Creates a config for data sending
+	DataSendingConfig(String host, int maxQueueSize, int timeout, int retries,
+			int requestRetryWait, String organisationId, String projectId) {
+		setHost(host);
+		setMaxQueueSize(maxQueueSize);
+		setTimeout(timeout);
+		setRetries(retries);
+		setRequestRetryWait(requestRetryWait);
+		setOrganisationId(organisationId);
+		setProjectId(projectId);
+	}
+
+	// intialise with defaults
 	public DataSendingConfig() {
 		this(Defaults.HOST, Defaults.MAX_QUEUE_SIZE, Defaults.TIMEOUT,
 				Defaults.RETRIES, Defaults.BACKOFF, Defaults.ORGANISATION_ID,

@@ -3,7 +3,7 @@ package com.github.datasnap.propertiesandevents;
 public class User {
 
 	private Tags tags;
-    private Propid Propid;
+    private PropId Propid;
     private Audience audience;
     private UserProperties userProperties; 
 	private boolean optInLocation;    
@@ -18,11 +18,11 @@ public class User {
 		this.tags = tags;
 	}
 
-	public Propid getId() {
+	public PropId getId() {
 		return Propid;
 	}
 
-	public void setId(Propid Propid) {
+	public void setId(PropId Propid) {
 		this.Propid = Propid;
 	}
 
