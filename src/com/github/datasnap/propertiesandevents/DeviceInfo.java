@@ -11,10 +11,10 @@ public class DeviceInfo extends Property{
 	public void setCreated(String created) {
 		this.created = created;
 	}
-	public Device getPropDevice() {
+	public Device getDevice() {
 		return device;
 	}
-	public void setPropDevice(Device device) {
+	public void setDevice(Device device) {
 		this.device = device;
 	}
 

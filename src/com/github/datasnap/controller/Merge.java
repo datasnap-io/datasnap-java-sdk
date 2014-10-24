@@ -1,4 +1,4 @@
-package com.github.datasnap.tests;
+package com.github.datasnap.controller;
 
 
 import org.json.JSONException;

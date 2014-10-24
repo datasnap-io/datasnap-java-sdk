@@ -1,5 +1,8 @@
 package com.github.datasnap.tests;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.github.datasnap.controller.*;
 import com.github.datasnap.events.IEvent;
 import com.github.datasnap.events.GlobalPositionEvent;
@@ -12,6 +15,10 @@ public class GlobalPositionTest {
 		DataSnap dataSnap = new DataSnap();
 		dataSnap.initialize();
 
+		
+		String[]organizationIds = {Defaults.ORGANISATION_ID};
+		String[]projectIds = {Defaults.PROJECT_ID};
+		
 		String eventType = "global_position_sighting";
 		Place place = new Place();
 		place.setPlaceId("placeId");
@@ -45,11 +52,19 @@ public class GlobalPositionTest {
 		device.setCarrierName("Verizon");
 		device.setCountryCode("1");
 		device.setNetworkCode("327");
-		deviceInfo.setPropDevice(device);
+		deviceInfo.setDevice(device);
+		
+		Beacon beacon2 = new Beacon();
+		String beaconid2 = "SHDG-test";
+		beacon2.setIdentifier(beaconid2);
 
-		IEvent event = new GlobalPositionEvent(eventType,
-				Defaults.ORGANISATION_ID, Defaults.PROJECT_ID, user,
-				globalPosition, deviceInfo);
+		Map<String, Object> additionalProperties = new HashMap<String, Object>();
+		additionalProperties.put("beacontest", beacon2);
+		additionalProperties.put("beacontest2", beacon2);
+		
+		
+		IEvent event = new GlobalPositionEvent(eventType, organizationIds, projectIds, user,
+				globalPosition, deviceInfo, additionalProperties);
 		dataSnap.addEvent(event);
 	}
 

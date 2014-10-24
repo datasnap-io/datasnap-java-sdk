@@ -3,12 +3,15 @@ package com.github.datasnap.tests;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
+
 import com.github.datasnap.controller.*;
 import com.github.datasnap.events.BeaconEvent;
 import com.github.datasnap.events.IEvent;
 import com.github.datasnap.propertiesandevents.*;
+import com.github.datasnap.utils.Defaults;
 
 public class BeaconTest {
 
@@ -17,10 +20,12 @@ public class BeaconTest {
 		DataSnap dataSnap = new DataSnap();
 		dataSnap.initialize();
 
+		String[]organizationIds = {Defaults.ORGANISATION_ID};
+		String[]projectIds = {Defaults.PROJECT_ID};
 		String eventType = "beacon_depart";
 		Place place = new Place();
-		place.setPlaceId("placeId");
-		place.setLastPlace("placeid-3");
+		place.setPlaceId("1234");
+		place.setLastPlace("123placeid-3");
 		User user = new User();
 		PropId propId = new PropId();
 		propId.setMobileDeviceIosIdfa("1a847de9f24b18eee3fac634b833b7887b32dea3");
@@ -48,12 +53,14 @@ public class BeaconTest {
 		beacon2.setIdentifier(beaconid2);
 
 		Map<String, Object> additionalProperties = new HashMap<String, Object>();
-		additionalProperties.put("becaontest", beacon2);
-		additionalProperties.put("becaontest2", beacon2);
+		additionalProperties.put("beacontest", beacon2);
+		additionalProperties.put("beacontest2", beacon2);
 
-		IEvent event = new BeaconEvent(eventType, place, user, beacon,
+		IEvent event = new BeaconEvent(eventType, organizationIds, projectIds, place, user, beacon,
 				deviceInfo, additionalProperties);
 		dataSnap.addEvent(event);
 	}
 
 }
+
+

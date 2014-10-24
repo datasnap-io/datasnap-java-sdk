@@ -36,7 +36,7 @@ public class Communication extends Property{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String gSetCommunicationVendorId() {
+	public String getCommunicationVendorId() {
 		return communicationVendorId;
 	}
 	public void setCommunicationVendorId(String communicationVendorId) {

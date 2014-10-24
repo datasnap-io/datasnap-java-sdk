@@ -24,7 +24,6 @@ import org.slf4j.LoggerFactory;
 import com.github.datasnap.events.IEvent;
 import com.github.datasnap.eventthreading.EventListBatchObject;
 import com.github.datasnap.stats.DsClientStats;
-import com.github.datasnap.tests.Merge;
 import com.github.datasnap.utils.Defaults;
 
 // a blocking requester
@@ -61,6 +60,8 @@ public class Requester {
 			eventListBatchObject.setSentAt(DateTime.now());
 
 			ObjectMapper mapper = new ObjectMapper();
+			mapper.setPropertyNamingStrategy(
+				    PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
 			mapper.setSerializationInclusion(Inclusion.NON_NULL);
 			for(IEvent ev: eventListBatchObject.getBatch()){
 			Map<String, Object> additional = ev.getAdditionalProperties();
@@ -73,17 +74,16 @@ public class Requester {
 
 			JSONObject jsonAddObj = new JSONObject(jsonAdd);
 			JSONObject JsonEventObj = new JSONObject(jsonEvent);
+			
+			System.out.println(jsonAddObj);
+			System.out.println(JsonEventObj);
+			
 			JSONObject finalJson = Merge.deepMerge(jsonAddObj, JsonEventObj);
 			mapper.setSerializationInclusion(Inclusion.NON_NULL);
-
-			mapper.setPropertyNamingStrategy(
-				    PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
+			String str = "["+finalJson+"]";
 			
-			
-			System.out.println(finalJson);
-			String finalJsonString = mapper.writeValueAsString(e);
-
-			HttpResponse response = executeRequest(finalJsonString);
+			System.out.println(str);
+			HttpResponse response = executeRequest(str);
 			String responseBody = readResponseBody(response);
 			int statusCode = response.getStatusLine().getStatusCode();
 
@@ -116,9 +116,10 @@ public class Requester {
 		HttpPost post = new HttpPost(client.getOptions().getHost());
 		post.setHeader("Content-Type", "application/json");
 		post.addHeader("Authorization",
-				"Basic E9NZuB6A91e2J03PKA2g7wx0629czel8");
+				"Basic MUVNNTNIVDg1OTdDQzdRNVFQMFU4RE43MzpDY2R1eWFrUnNaOEFRL0hMZFhFUjJFanNDT2xmMjlDVEZWay9CY3RGbVFN");
 		post.setConfig(defaultRequestConfig);
 		StringEntity se = new StringEntity(json);
+		System.out.println(se.getContent());
 		post.setEntity(se);
 		if (logger.isTraceEnabled()) {
 			logger.trace("Posting analytics data");

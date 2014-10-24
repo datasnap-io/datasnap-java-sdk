@@ -1,5 +1,8 @@
 package com.github.datasnap.tests;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.github.datasnap.controller.*;
 import com.github.datasnap.events.IEvent;
 import com.github.datasnap.events.InteractionEvent;
@@ -11,7 +14,10 @@ public class InteractionTest {
 	public static void main(String[] args) {
 		DataSnap dataSnap = new DataSnap();
 		dataSnap.initialize();
-
+		String[]organizationIds = {Defaults.ORGANISATION_ID};
+		String[]projectIds = {Defaults.PROJECT_ID};
+		
+		
 		String eventType = "opt_in_vendor";
 		Place place = new Place();
 		place.setPlaceId("placeId");
@@ -26,8 +32,16 @@ public class InteractionTest {
 		user.setOptInVendor(true);
 		user.setId(propId);
 
-		IEvent event = new InteractionEvent(eventType,
-				Defaults.ORGANISATION_ID, Defaults.PROJECT_ID, user);
+		Beacon beacon2 = new Beacon();
+		String beaconid2 = "SHDG-test";
+		beacon2.setIdentifier(beaconid2);
+
+		Map<String, Object> additionalProperties = new HashMap<String, Object>();
+		additionalProperties.put("beacontest", beacon2);
+		additionalProperties.put("beacontest2", beacon2);
+		
+		
+		IEvent event = new InteractionEvent(eventType, organizationIds, projectIds, user, additionalProperties);
 		dataSnap.addEvent(event);
 	}
 

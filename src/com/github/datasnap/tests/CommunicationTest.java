@@ -1,5 +1,8 @@
 package com.github.datasnap.tests;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.github.datasnap.controller.*;
 import com.github.datasnap.events.CommunicationEvent;
 import com.github.datasnap.events.IEvent;
@@ -12,6 +15,9 @@ public class CommunicationTest {
 		DataSnap dataSnap = new DataSnap();
 		dataSnap.initialize();
 
+		
+		String[]organizationIds = {Defaults.ORGANISATION_ID};
+		String[]projectIds = {Defaults.PROJECT_ID};
 		String eventType = "communication_delivered";
 		Place place = new Place();
 		place.setPlaceId("placeId");
@@ -25,7 +31,9 @@ public class CommunicationTest {
 		Communication communication = new Communication();
 		communication.setCommunicationVendorId("airpush123");
 		communication.setName("10% offPushnotification");
-		Type type = new Type("typeid", "PushNotification");
+		Type type = new Type();
+		type.setId("typeid");
+		type.setName("PushNotification");
 		communication.setPropTypes(type);
 		Content content = new Content();
 		content.setDescription("get10%offifyougotothe");
@@ -39,9 +47,17 @@ public class CommunicationTest {
 		campaign.setCampaignId("camapign10%offshoes");
 		campaign.setCommunicationIds("commid1"); // change to array..
 
-		IEvent event = new CommunicationEvent(eventType,
-				Defaults.ORGANISATION_ID, Defaults.PROJECT_ID, user,
-				communication, campaign);
+		Beacon beacon2 = new Beacon();
+		String beaconid2 = "SHDG-test";
+		beacon2.setIdentifier(beaconid2);
+
+		Map<String, Object> additionalProperties = new HashMap<String, Object>();
+		additionalProperties.put("beacontest", beacon2);
+		additionalProperties.put("beacontest2", beacon2);
+		
+		
+		IEvent event = new CommunicationEvent(eventType, organizationIds, projectIds, user,
+				communication, campaign, additionalProperties);
 		dataSnap.addEvent(event);
 	}
 

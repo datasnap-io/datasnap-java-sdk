@@ -11,17 +11,17 @@ import com.github.datasnap.propertiesandevents.User;
 public class CommunicationEvent implements IEvent {
 
 	private String eventType;
-	private String organizationIds; // change to string array
-	private String projectIds; // change to string array
+	private String[] organizationIds;
+	private String[] projectIds;
 	private User user;
 	private Communication communication;
 	private Campaign campaign;
 	@JsonIgnore
 	private Map<String, Object> additionalProperties;
 
-	public CommunicationEvent(String eventType, String organizationIds,
-			String projectIds, User user, Communication communication,
-			Campaign campaign) {
+	public CommunicationEvent(String eventType, String[] organizationIds,
+			String[] projectIds, User user, Communication communication,
+			Campaign campaign, Map<String, Object> additionalProperties) {
 		super();
 		this.eventType = eventType;
 		this.organizationIds = organizationIds;
@@ -29,29 +29,39 @@ public class CommunicationEvent implements IEvent {
 		this.user = user;
 		this.communication = communication;
 		this.campaign = campaign;
+		this.additionalProperties = additionalProperties;
+
 	}
 
-	public String getEventType() {
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
+
+	public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+		this.additionalProperties = additionalProperties;
+	}
+
+	public String getEvent_type() {
 		return eventType;
 	}
 
-	public void setEventType(String eventType) {
+	public void setEvent_type(String eventType) {
 		this.eventType = eventType;
 	}
 
-	public String getOrganizationIds() {
+	public String[] getOrganizationIds() {
 		return organizationIds;
 	}
 
-	public void setOrganizationIds(String organizationIds) {
+	public void setOrganizationIds(String[] organizationIds) {
 		this.organizationIds = organizationIds;
 	}
 
-	public String getProject_ids() {
+	public String[] getProjectIds() {
 		return projectIds;
 	}
 
-	public void setProject_ids(String projectIds) {
+	public void setProjectIds(String[] projectIds) {
 		this.projectIds = projectIds;
 	}
 
@@ -77,14 +87,6 @@ public class CommunicationEvent implements IEvent {
 
 	public void setCampaign(Campaign campaign) {
 		this.campaign = campaign;
-	}
-
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
-	}
-
-	public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-		this.additionalProperties = additionalProperties;
 	}
 
 }

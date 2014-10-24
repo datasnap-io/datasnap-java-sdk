@@ -12,14 +12,15 @@ import java.util.Map;
 public class BeaconEvent implements IEvent {
 
 	private String eventType;
-	private String organizationIds; // change to string array
-	private String projectIds; // change to string array
+	private String[] organizationIds;
+	private String[] projectIds;
 	private Place place;
 	private User user;
 	private Beacon beacon;
 	private DeviceInfo deviceInfo; // for now
 
-	public BeaconEvent(String eventType, Place place, User user, Beacon beacon,
+	public BeaconEvent(String eventType, String[] organizationIds,
+			String[] projectIds, Place place, User user, Beacon beacon,
 			DeviceInfo deviceInfo, Map<String, Object> additionalProperties) {
 		this.eventType = eventType;
 		this.place = place;
@@ -27,6 +28,8 @@ public class BeaconEvent implements IEvent {
 		this.beacon = beacon;
 		this.deviceInfo = deviceInfo;
 		this.additionalProperties = additionalProperties;
+		this.organizationIds = organizationIds;
+		this.projectIds = projectIds;
 	}
 
 	@JsonIgnore
@@ -48,19 +51,19 @@ public class BeaconEvent implements IEvent {
 		this.eventType = eventType;
 	}
 
-	public String getOrganizationIds() {
+	public String[] getOrganizationIds() {
 		return organizationIds;
 	}
 
-	public void setOrganization_ids() {
+	public void setOrganizationIds(String[] organizationIds) {
 		this.organizationIds = organizationIds;
 	}
 
-	public String getProjectIds() {
+	public String[] getProjectIds() {
 		return projectIds;
 	}
 
-	public void setProjectIds() {
+	public void setProjectIds(String[] projectIds) {
 		this.projectIds = projectIds;
 	}
 
