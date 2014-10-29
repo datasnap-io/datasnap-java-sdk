@@ -5,3 +5,9 @@ Datasnap-JavaSDK
 * Main logic is contained withing the following package: com.github.datasnap.controller
 * Environment specific configuration such as organisation & project ids for communicating with the server, as well as threading/batching parameters for ensuring efficient client side integration can be updated here: com.github.datasnap.controller.DataSendingConfig , otherwise the defaults in com.github.datasnap.utils.Defaults will be used
 
+Configuration:
+=============
+* We have made available a jar file that can be integrated with your project. It is available in the following location:
+
+Configuration details for integrating directly in maven and gradle will be provided soon.
+
