@@ -8,6 +8,7 @@ Datasnap-JavaSDK
 Configuration:
 =============
 * We have made available a jar file that can be integrated with your project. It is available in the following location:
+https://s3-us-west-2.amazonaws.com/datasnap-ios-builds/datasnap-JavaSDK-1.0.jar
 
 Configuration details for integrating directly in maven and gradle will be provided soon.
 
