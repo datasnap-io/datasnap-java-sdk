@@ -26,6 +26,7 @@ public class UpdateTest {
 		propBeacon.setBleUuid("ble_uuid"); 
 		propBeacon.setBleVendorUuid("ble_vendor_uuid");
 		propBeacon.setBleVendorId("ble_vendor_id");
+		propBeacon.setRssi("-40");
 		propBeacon.setName("Front Entrance");
 		propBeacon.setIsMobile("false");
 		propBeacon.setStartTime("2014-08-22 14:48:02 +0000");
